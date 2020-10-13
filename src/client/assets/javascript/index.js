@@ -121,7 +121,7 @@ function runRace(raceID) {
 			reslove(res) // resolve the promise
 		}
 	}, 500)
-	})
+	}).catch(err => console.log("Problem during race continues::", err))
 	// remember to add error handling for the Promise
 }
 
