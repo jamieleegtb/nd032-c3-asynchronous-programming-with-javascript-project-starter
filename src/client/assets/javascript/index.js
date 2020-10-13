@@ -118,7 +118,7 @@ function runRace(raceID) {
 		else if (res.status === "finished"){
 			clearInterval(raceInterval) // to stop the interval from repeating
 			renderAt('#race', resultsView(res.positions)) // to render the results view
-			reslove(res) // resolve the promise
+			resolve(res) // resolve the promise
 		}
 	}, 500)
 	}).catch(err => console.log("Problem during race continues::", err))
@@ -141,7 +141,7 @@ async function runCountdown() {
 			// TODO - if the countdown is done, clear the interval, resolve the promise, and return
 			if (timer === 0) {
 				clearInterval(raceInterval) // to stop the interval from repeating
-				reslove(res) // resolve the promise
+				resolve() // resolve the promise
 				return // return
 			}
 
