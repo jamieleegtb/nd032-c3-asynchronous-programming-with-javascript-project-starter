@@ -135,13 +135,18 @@ async function runCountdown() {
 			// TODO - use Javascript's built in setInterval method to count down once per second
 			const interval = setInterval(() => {
 
-			}, 1000);
-
 			// run this DOM manipulation to decrement the countdown for the user
 			document.getElementById('big-numbers').innerHTML = --timer
 
 			// TODO - if the countdown is done, clear the interval, resolve the promise, and return
+			if (timer === 0) {
+				clearInterval(raceInterval) // to stop the interval from repeating
+				reslove(res) // resolve the promise
+				return // return
+			}
 
+
+			}, 1000);
 		})
 	} catch(error) {
 		console.log(error);
