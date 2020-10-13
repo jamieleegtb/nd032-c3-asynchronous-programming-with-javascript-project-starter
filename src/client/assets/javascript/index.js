@@ -326,7 +326,9 @@ function getTracks() {
 }
 
 function getRacers() {
-	// GET request to `${SERVER}/api/cars`
+	return fetch(`${SERVER}/api/cars`)
+		.then(res => res.json())
+		.catch(err => console.log("Problem with getTracks request::", err))
 }
 
 function createRace(player_id, track_id) {
