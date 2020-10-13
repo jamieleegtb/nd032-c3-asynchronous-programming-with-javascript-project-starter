@@ -145,7 +145,6 @@ async function runCountdown() {
 				return // return
 			}
 
-
 			}, 1000);
 		})
 	} catch(error) {
@@ -166,6 +165,7 @@ function handleSelectPodRacer(target) {
 	target.classList.add('selected')
 
 	// TODO - save the selected racer to the store
+	store.player_id = Number(taget.id)
 }
 
 function handleSelectTrack(target) {
@@ -181,6 +181,7 @@ function handleSelectTrack(target) {
 	target.classList.add('selected')
 
 	// TODO - save the selected track id to the store
+	store.target_id = Number(taget.id)
 
 }
 
