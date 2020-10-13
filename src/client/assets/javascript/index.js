@@ -90,14 +90,10 @@ async function handleCreateRace() {
 
 		// The race has been created, now start the countdown
 		// TODO - call the async function runCountdown
-		await runCountdown();
 
 		// TODO - call the async function startRace
-		await startRace(store.race_id);
 
 		// TODO - call the async function runRace
-		await runRace(store.race_id);
-		
 	} catch (err) {
 		console.log("Problem during creating a race::", err)
 	}
