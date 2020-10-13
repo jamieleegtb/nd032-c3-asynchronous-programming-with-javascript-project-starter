@@ -113,13 +113,13 @@ function runRace(raceID) {
 			renderAt('#leaderBoard', raceProgress(res.positions))
 		}
 
-	/*
-		TODO - if the race info status property is "finished", run the following:
 
-		clearInterval(raceInterval) // to stop the interval from repeating
-		renderAt('#race', resultsView(res.positions)) // to render the results view
-		reslove(res) // resolve the promise
-	*/
+		//TODO - if the race info status property is "finished", run the following:
+		else if (res.status === "finished"){
+			clearInterval(raceInterval) // to stop the interval from repeating
+			renderAt('#race', resultsView(res.positions)) // to render the results view
+			reslove(res) // resolve the promise
+		}
 	}, 500)
 	})
 	// remember to add error handling for the Promise
