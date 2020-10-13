@@ -165,7 +165,7 @@ function handleSelectPodRacer(target) {
 	target.classList.add('selected')
 
 	// TODO - save the selected racer to the store
-	store.player_id = Number(taget.id)
+	store.player_id = Number(target.id)
 }
 
 function handleSelectTrack(target) {
@@ -181,7 +181,7 @@ function handleSelectTrack(target) {
 	target.classList.add('selected')
 
 	// TODO - save the selected track id to the store
-	store.target_id = Number(taget.id)
+	store.target_id = Number(target.id)
 
 }
 
@@ -205,7 +205,7 @@ function renderRacerCars(racers) {
 
 	return `
 		<ul id="racers">
-			${reuslts}
+			${results}
 		</ul>
 	`
 }
