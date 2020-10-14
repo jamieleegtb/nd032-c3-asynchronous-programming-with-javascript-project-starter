@@ -110,13 +110,13 @@ function runRace(raceID) {
 			const res = await getRace(raceID)
 
 		//TODO - if the race info status property is "in-progress", update the leaderboard by calling:
-		if (res.status === "in-progress"){
+		if (res.status === 'in-progress'){
 			renderAt('#leaderBoard', raceProgress(res.positions))
 		}
 
 
 		//TODO - if the race info status property is "finished", run the following:
-		else if (res.status === "finished"){
+		else if (res.status === 'finished'){
 			clearInterval(raceInterval) // to stop the interval from repeating
 			renderAt('#race', resultsView(res.positions)) // to render the results view
 			resolve(res) // resolve the promise
@@ -407,5 +407,6 @@ function accelerate(id) {
 		...defaultFetchOpts(),
 	})
 	.then(res => res.json())
+	.then(data => console.log(data))
 	.catch(err => console.log("Problem with accelerate request::", err))
 }
